@@ -1,44 +1,63 @@
-# 🧠 AI Document Diff Tool
+# 🧠 AI Document Diff Tool — Python App (Archived)
 
-AI Document Diff Tool is an advanced document comparison engine for **DOCX, XLSX, and TXT** files.  
-It generates **interactive HTML reports** enhanced with **AI semantic heuristics** for meaningful change detection.
+> ⚠️ **This repository is archived.**
+> Originally built as a standalone **pure Python** document diff engine.  
+> It now lives inside my main Django portfolio project:  
+> https://github.com/draprar/django_portfolio-walery (see `/document_diff` app)
+
+## 📖 Overview
+
+AI Document Diff Tool started as a standalone Python CLI utility for comparing **DOCX, XLSX, and TXT** files using structural diffing and lightweight semantic analysis.
+
+Later, the full backend logic was integrated as a Django application inside my modular portfolio.  
+The Django version retains the same comparison engine while adding UI and API endpoints.
+
+## 🧠 Project Evolution
+
+- Standalone Python tool → *(this repository)*  
+- Enhanced with AI heuristics and interactive HTML reports  
+- Integrated into a modular Django portfolio → `/document_diff`
 
 ## ✨ Features
 
-- **Smart Diff Engine** — detects added, deleted, and modified content in text, tables, and images.  
-- **AI Heuristics** — uses spaCy to detect semantic context, entities, and similarity scores.  
-- **Interactive Reports** — HTML reports with filters, collapsible sections, and dark/light mode.  
-- **JSON Export** — structured data for further integration or automation.  
-
+- Smart structural diff (text, tables, images)  
+- AI semantic heuristics using spaCy  
+- Interactive HTML reports (filters, collapsible sections, dark/light mode)  
+- JSON export for automation  
+- Semantic similarity scoring (0–10)  
+  
 ## 🛠️ Technologies
 
-- **Python 3.11+**
-- **spaCy (pl_core_news_md)** — for Polish language semantic analysis  
-- **difflib** — for fine-grained text comparison  
-- **openpyxl**, **python-docx**, **pandas** — document parsing  
-- **Custom AI Heuristics** — lightweight scoring and entity detection  
+- Python 3.11+  
+- spaCy (`pl_core_news_md`)  
+- python-docx, openpyxl, pandas  
+- difflib  
+- Custom HTML/JS reporting engine  
 
 ## 🚀 Installation
 
 1. Clone the repository:
-   ```bash
+
+   ```
    git clone https://github.com/draprar/python-text-similarity-analysis.git
    cd python-text-similarity-analysis
    ```
    
-2. Install dependencies:
-   ```bash
+3. Install dependencies:
+   ```
    pip install -r requirements.txt
    python -m spacy download pl_core_news_md
    ```
 
-3. Run the tool:
-   ```bash
+4. Run the tool:
+   
+   ```
    python main.py old.docx new.docx
    ```
    
-4. The output report will be saved as:
-   ```bash
+6. The output report will be saved as:
+   
+   ```
    raport.html
    raport.json
    ```
@@ -50,30 +69,25 @@ It generates **interactive HTML reports** enhanced with **AI semantic heuristics
    python main.py file_old.docx file_new.docx
    ```
 
-Then open `raport.html` in your browser to explore:
+Then open `raport.html` to explore:
 
-- Collapsible unchanged sections  
-- Highlighted semantic differences  
-- AI analysis summaries per paragraph or table  
+- Highlighted structural and semantic changes
+- Collapsible unchanged content
+- Filters (added, deleted, changed, unchanged)
+- Block types (paragraph, table, image)
+- spaCy entity labels (osoba, organizacja, liczba, data)
+- Similarity metrics
 
----
+## 📌 Notes
 
-## 📊 Example Report Features
-
-- Toggle between change types *(added, deleted, changed, unchanged)*  
-- Filter by block type *(paragraph, table, image)*  
-- AI labels such as `osoba`, `data`, `liczba`, `organizacja`  
-- Semantic similarity scores *(0–10)*  
-- Light/Dark mode toggle  
-
----
+- No longer actively maintained
+- Lives as a Django module in my main portfolio repo
+- This repo remains for archival and standalone CLI usage
 
 ## 📜 License
 
 This project is licensed under the **MIT License**.
 
----
-
-## 👨‍💻 Credits
+## 👤 Author
 
 **Developer**: Walery ([@draprar](https://github.com/draprar/))  
